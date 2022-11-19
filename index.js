@@ -1,24 +1,12 @@
 import express  from "express";
 import cors from 'cors';
+import{ router } from './routes/rutas.js'
 
 const app = express();
 app.use(cors());
-app.use(express.json())
+app.use(express.json());
 /*app.use('/usuarios',blogRoutes)*/
-app.use(router)
-router.get('/', (req,res) => {
-    res.send('bienvenidos a node js desde la raiz');
-
-})
-
-router.get('/login',(req,res)=>{
-    res.send('Bienvenidos carevergas');
-
-})
-
-router.post('/agregar',(req,res)=>{
-    res.send('archivo grabado con exito');
-})
+app.use('/usuarios',router);
 
 
 /*app.get('/',(req,res,)=>{ 
