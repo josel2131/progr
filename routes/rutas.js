@@ -1,10 +1,16 @@
 import express  from "express";
-import cors from 'cors';
+import {URI} from '../conectarMongodb.js';
+import { regusuario, showuser, showoneuser, upuser, deluser } from '../controllers/userControllers.js';
+//import cors from 'cors';
 export const router = express.Router();
-//app.use(router);
+
+
+
+
 
 router.get('/', (req,res) => {
     res.send('bienvenidos a node js desde la raiz');
+    console.log("connected to", db.connection.name);
 
 })
 
@@ -13,12 +19,18 @@ router.get('/login',(req,res)=>{
 
 })
 
-router.post('/agregar',(req,res)=>{
+router.post('/reguser',regusuario ); 
+router.get('/shuser', showuser );
+router.get('/shuser/:id', showoneuser);
+router.put('/upuser/:id',upuser);
+router.delete('/deluser/:id' ,deluser);
+
+/*router.post('/agregar',(req,res)=>{
     res.send('archivo grabado con exito');
-})
+})*/
 
 router.delete('/delete',(req,res)=>{
     res.send('archivo eliminado con exito');
 })
 
-export default router
+export default router;
