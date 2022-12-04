@@ -20,6 +20,7 @@ router.get('/login',(req,res)=>{
 
 })
 
+//rutas para usuarios
 router.post('/reguser',regusuario ); 
 router.get('/shuser', showuser );
 router.get('/shuser/:id', showoneuser);
@@ -33,9 +34,6 @@ router.get('/showevento/:id', showeonevento);
 router.put('/upevento/:id',upevento);
 router.delete('/delevento/:id' ,delevento);
 
-/*router.post('/agregar',(req,res)=>{
-    res.send('archivo grabado con exito');
-})*/
 
 router.delete('/delete',(req,res)=>{
     res.send('archivo eliminado con exito');
