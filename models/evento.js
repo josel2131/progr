@@ -6,11 +6,11 @@ const eventosSchema = new mongoose.Schema({
     },
     equipo1: {
         type: String,
-        require: true
+        require: true,
     },
     equipo2: {
         type: String,
-        require: true
+        require: true,
     },
     marcador1: {
         type:Number,
@@ -20,8 +20,15 @@ const eventosSchema = new mongoose.Schema({
     },
     tipoevento: {
         type: String,
-        require: true
+        require: true,
     }
-});
+    
+},
+{
+    timestamps: true,
+    versionKey: false,
+}
+);
 
-export default mongoose.model("ceventos",eventosSchema);
+export const evento = mongoose.model ("ceventos",eventosSchema);
+export default evento;
